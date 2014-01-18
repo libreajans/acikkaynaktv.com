@@ -1,0 +1,76 @@
+#----------------------------------------------------------------------
+# siteye özel .htaccess dosyasıdır.
+# dosya üstünde yapacağınız her değişiklik sistemi etkileyecektir.
+#----------------------------------------------------------------------
+
+SetEnv TZ Europe/Istanbul
+#SetEnv variables_order GPSC
+
+php_flag register_argc_argv Off
+php_flag register_long_arrays Off
+php_flag magic_quotes_gpc off
+php_flag safe_mode_gid Off
+php_flag safe_mode Off
+php_flag register_globals off
+php_flag display_errors on
+php_flag short_open_tag on
+
+#----------------------------------------------------------------------
+# temel dosya sıralamasını değiştiriyoruz
+#----------------------------------------------------------------------
+
+DirectoryIndex index.php?lang=1 index.html
+
+#----------------------------------------------------------------------
+# temel Rewrite aktif ediliyor
+#----------------------------------------------------------------------
+
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /acikkaynaktv.com/
+
+#----------------------------------------------------------------------
+# yönlendirme ve hata verme sayfaları
+#----------------------------------------------------------------------
+
+ErrorDocument 400 /acikkaynaktv.com/hata.php
+ErrorDocument 401 /acikkaynaktv.com/hata.php
+ErrorDocument 403 /acikkaynaktv.com/hata.php
+ErrorDocument 404 /acikkaynaktv.com/hata.php
+ErrorDocument 500 /acikkaynaktv.com/hata.php
+
+#----------------------------------------------------------------------
+# temel www yönlendirmesi
+#----------------------------------------------------------------------
+
+rewritecond %{http_host} ^acikkaynaktv.com [nc]
+rewriterule ^(.*)$ http://www.acikkaynaktv.com/$1 [r=301,nc]
+
+#----------------------------------------------------------------------
+# refli bağlantılar ile oluşturulan spamları önleyelim
+#----------------------------------------------------------------------
+
+RewriteCond %{THE_REQUEST} \?(ref=.*)?\ HTTP [NC]
+RewriteRule .? http://www.acikkaynaktv.com? [R=301,L]
+
+#----------------------------------------------------------------------
+# url yenidenyazma kuralları
+#----------------------------------------------------------------------
+
+rewritecond %{http_host} ^acikkaynaktv.com [nc]
+rewriterule ^(.*)$ http://www.acikkaynaktv.com/$1 [r=301,nc]
+
+Rewriterule ^(.+)-f([0-9]*)\.html$ urundetay.php?fid=$2[L]
+
+Rewriterule ^sitemap-([0-9]*)\.xml$ sitemap.php?sayfa=$1 [L]
+Rewriterule ^sitemap\.xml$ sitemap.php [L]
+
+Rewriterule ^feed/addtime/$ feed.php?type=createtar [L]
+Rewriterule ^feed/addtime$ feed.php?type=createtar [L]
+
+Rewriterule ^feed/$ feed.php [L]
+Rewriterule ^feed$ feed.php [L]
+
+#----------------------------------------------------------------------
+# Bitti
+#----------------------------------------------------------------------

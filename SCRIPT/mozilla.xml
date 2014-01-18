@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+<ShortName>Açık Kaynak TV</ShortName>
+<Description>Açık Kaynak TV, arama motoru</Description>
+<Tags>Açık Kaynak Tv</Tags>
+<Contact>no-reply@acikkaynaktv.com</Contact>
+<Url type="text/html" template=" http://www.acikkaynaktv.com/index.php?aramaanahtari={searchTerms}" />
+<LongName>acikkaynaktv.com, arama motoru</LongName>
+<Image height="16" width="16" type="image/vnd.microsoft.icon">http://www.acikkaynaktv.com/favicon.ico</Image>
+<Image height="16" width="16" type="image/x-icon">http://www.acikkaynaktv.com/favicon.ico</Image>
+<Query role="example" searchTerms="cat" />
+<Developer>yakushabb@gmail.com</Developer>
+<Attribution>Open Source GPL 2 Lisance</Attribution>
+<SyndicationRight>open</SyndicationRight>
+<AdultContent>false</AdultContent>
+<Language>TR-tr</Language>
+<OutputEncoding>utf-8</OutputEncoding>
+<InputEncoding>utf-8</InputEncoding>
+<AdultContent>false</AdultContent>
+</OpenSearchDescription>

@@ -1,0 +1,2 @@
+# robots.txt for yakusha
+Sitemap: http://www.acikkaynaktv.com/sitemap.xml

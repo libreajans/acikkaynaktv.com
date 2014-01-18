@@ -1,0 +1,8 @@
+18-01-2014 (ver: 0.3.1)
+- Moved to GitHub
+
+06-12-2013 (ver: 0.3.0)
+- UTF-8 version 
+
+18-05-2010 (ver: 0.2.0)
+- Ýnitial Version

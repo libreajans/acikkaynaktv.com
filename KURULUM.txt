@@ -1,0 +1,82 @@
+SETUP ACTÝONS
+
+1 - add SCRIPT/ to yourwebsite.com/ dir.
+2 - create new database with "db.sql"
+
+--- | SET CHMOD 777
+
+SCRIPT/_cache/
+
+--- | OPEN
+
+SCRIPT/_lib/lib_con.php
+
+--- | FIND
+
+if(ST_ONLINE == 1)
+{
+	$dbCon = array(
+		'host' => '',
+		'name' => '',
+		'user' => '',
+		'pass' => '',
+		'lang' => '',
+	);
+}
+
+--- | REPLACE
+
+if(ST_ONLINE == 1)
+{
+	$dbCon = array(
+		'host' => 'dbhost',
+		'name' => 'dbname',
+		'user' => 'dbuser',
+		'pass' => 'dbpassword',
+		'lang' => 'utf8',
+	);
+}
+
+----------------------------
+IF HOST <> LOCALHOST
+
+	--- | OPEN
+
+	root/_header.php
+
+	--- | FIND
+
+	define ('ST_ONLINE', 0);
+
+	--- | REPLACE
+
+	define ('ST_ONLINE', 1);
+
+
+	--- | OPEN
+
+	.htaccess
+
+	--- | FIND
+
+	/acikkaynaktv.com/
+
+	--- | REPLACE
+
+	/
+
+ENDIF
+----------------------------
+
+TO LOGIN
+
+--- | GO TO 
+
+SCRIPT/giris.php
+
+--- | INPUT 
+
+user: admin
+pass: admin
+
+end of changes
