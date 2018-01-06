@@ -5,4 +5,4 @@
 - UTF-8 version 
 
 18-05-2010 (ver: 0.2.0)
-- Ýnitial Version
+- Initial Version
